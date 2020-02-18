@@ -15,7 +15,7 @@ Puppet::Functions.create_function(:dns_lookup) do
   end
 
   def dns_lookup(record)
-    Resolv::DNS.new.getaddresses(record).collect(&:to_s)
+    Resolv.getaddresses(record).collect(&:to_s)
   end
 
   def dns_lookup_with_default(record)
